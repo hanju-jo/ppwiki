@@ -1,21 +1,75 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import { Layout, Head, IndexPage } from '../components';
+import {
+  allMarkdownRemark as allMarkdownRemarkPropType,
+} from '../proptypes';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+export default function SiteIndex({
+  data: { 
+    site,
+    allMarkdownRemark: { 
+      edges: posts 
+    } 
+  },
+}) {
+  return (
+    <Layout site={site}>
+      <Head site={site} />
+      <IndexPage
+        posts={posts.map(
+          ({
+            node: {  
+              frontmatter: { title, path, date },
+            },
+          }) => ({
+            title,
+            path,
+            date,
+          }),
+        )}
+      />
+    </Layout>
+  );
+}
 
-export default IndexPage
+SiteIndex.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: allMarkdownRemarkPropType,
+  }).isRequired,
+};
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        siteUrl
+        title
+        author
+        description
+        social {
+          githubUrl
+          linkedInUrl
+        }
+      }
+    }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { fileAbsolutePath: { regex: "/src/pages/wiki/" } }
+    ) {
+      edges {
+        node {
+          html
+          frontmatter {
+            path
+            title
+            date(formatString: "MMMM DD, YYYY")
+            updated(formatString: "MMMM DD, YYYY")
+          }
+        }
+      }
+    }
+  }
+`;
