@@ -4,6 +4,7 @@ const {
     shape: ptShape,
     string: ptString,
     arrayOf: ptArrayOf,
+    bool: ptBool,
   } = PropTypes;
 
 export const siteSocial = ptShape({
@@ -27,6 +28,8 @@ export const markdownRemark = ptShape({
     date: ptString.isRequired,
     updated: ptString.isRequired,
     path: ptString.isRequired,
+    toc: ptBool,
+    public: ptBool
   }).isRequired,
   html: ptString.isRequired,
 }).isRequired;

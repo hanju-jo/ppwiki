@@ -12,8 +12,9 @@ export default function PostTemplate ({
   data: {
     site,
     markdownRemark: {
-      frontmatter: { title, date, updated, path },
+      frontmatter: { title, date, updated, path, toc: showToc },
       html,
+      tableOfContents,
     },
   },
 }) {
@@ -28,6 +29,8 @@ export default function PostTemplate ({
           title={title}
           date={date}
           updated={updated}
+          showToc={showToc}
+          tableOfContents={tableOfContents}
           html={html}
         />
     </Layout>
@@ -57,11 +60,13 @@ export const pageQuery = graphql`
     }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      tableOfContents
       frontmatter {
         path
         title
         date(formatString: "YYYY-MM-DD")
         updated(formatString: "YYYY-MM-DD")
+        toc
       }
     }
   }

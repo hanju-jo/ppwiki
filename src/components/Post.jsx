@@ -13,7 +13,12 @@ const Date = styled.p`
   opacity: 0.7;
 `;
 
-export default function Post({ title, date, updated, html }) {
+const TableOfContents = styled.div`
+  border-style: solid;
+  border-width: 1px;
+`;
+
+export default function Post({ title, date, updated, showToc, html, tableOfContents }) {
   return (
     <div>
       <Title>{title}</Title>
@@ -21,6 +26,7 @@ export default function Post({ title, date, updated, html }) {
         created: {date} <br/>
         updated: {updated}
       </Date>
+      {showToc ? <TableOfContents dangerouslySetInnerHTML={{ __html: tableOfContents }} /> : null}
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
@@ -30,5 +36,11 @@ Post.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   updated: PropTypes.string.isRequired,
+  showToc: PropTypes.bool,
   html: PropTypes.string.isRequired,
+  tableOfContents: PropTypes.string.isRequired,
+};
+
+Post.defaultProps = {
+  showToc: false,
 };

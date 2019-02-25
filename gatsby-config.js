@@ -26,7 +26,15 @@ module.exports = {
         path: `${__dirname}/src/pages`
       }
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        tableOfContents: {
+          heading: null,
+          maxDepth: 6,
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-feed',
