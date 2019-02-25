@@ -57,7 +57,14 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/src/pages/wiki/" } }
+      filter: {
+        fileAbsolutePath: {
+          regex: "/src/pages/wiki/"
+        }
+        frontmatter: {
+          public: { eq: true }
+        }
+      }
     ) {
       edges {
         node {
@@ -65,8 +72,9 @@ export const pageQuery = graphql`
           frontmatter {
             path
             title
-            date(formatString: "MMMM DD, YYYY")
-            updated(formatString: "MMMM DD, YYYY")
+            date(formatString: "YYYY-MM-DD")
+            updated(formatString: "YYYY-MM-DD")
+            public
           }
         }
       }

@@ -13,12 +13,13 @@ const Date = styled.p`
   opacity: 0.7;
 `;
 
-export default function Post({ title, date, html }) {
+export default function Post({ title, date, updated, html }) {
   return (
     <div>
       <Title>{title}</Title>
       <Date>
-        created: {date}
+        created: {date} <br/>
+        updated: {updated}
       </Date>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
@@ -28,5 +29,6 @@ export default function Post({ title, date, html }) {
 Post.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
+  updated: PropTypes.string.isRequired,
   html: PropTypes.string.isRequired,
 };

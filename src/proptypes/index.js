@@ -25,6 +25,7 @@ export const markdownRemark = ptShape({
   frontmatter: ptShape({
     title: ptString.isRequired,
     date: ptString.isRequired,
+    updated: ptString.isRequired,
     path: ptString.isRequired,
   }).isRequired,
   html: ptString.isRequired,

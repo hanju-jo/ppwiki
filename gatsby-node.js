@@ -36,7 +36,7 @@ const createPages = (
               path: pagePath,
               component: template,
               context: {
-                path: pagePath,
+                // path: pagePath,
               },
             });
           },
