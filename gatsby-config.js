@@ -29,9 +29,12 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        plugins: [
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-prismjs`,
+        ],
         tableOfContents: {
-          heading: null,
-          maxDepth: 6,
+          maxDepth: 3,
         },
       },
     },

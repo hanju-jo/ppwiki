@@ -23,7 +23,7 @@ export default function Post({ title, date, updated, showToc, html, tableOfConte
     <div>
       <Title>{title}</Title>
       <Date>
-        created: {date} <br/>
+        created: {date}<br/>
         updated: {updated}
       </Date>
       {showToc ? <TableOfContents dangerouslySetInnerHTML={{ __html: tableOfContents }} /> : null}

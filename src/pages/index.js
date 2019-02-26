@@ -56,7 +56,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___updated], order: DESC }
       filter: {
         fileAbsolutePath: {
           regex: "/src/pages/wiki/"

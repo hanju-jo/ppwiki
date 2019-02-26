@@ -2,7 +2,7 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 const createPages = (
-  { graphql, boundActionCreators: { createPage } },
+  { graphql, actions: { createPage } },
   filter,
   componentPath,
 ) =>
@@ -50,8 +50,8 @@ exports.createPages = async (props) => {
   // await createPages(props, '/src/pages/about/', './src/templates/About.jsx');
 };
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode });

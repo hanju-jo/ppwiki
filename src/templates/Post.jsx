@@ -60,7 +60,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
-      tableOfContents
+      tableOfContents(maxDepth: 3)
       frontmatter {
         path
         title
