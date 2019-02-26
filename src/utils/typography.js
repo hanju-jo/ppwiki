@@ -11,7 +11,8 @@ theme.googleFonts = [
 ];
 theme.overrideThemeStyles = ({ rhythm }) => ({
   'h1,h2,h3,h4,h5,h6': {
-    fontWeight: 700
+    fontWeight: 700,
+    paddingBottom: rhythm(0.25)
   },
   'ol,ul': {
     listStyleImage: null,

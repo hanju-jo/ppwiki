@@ -14,6 +14,7 @@ const NavLink = styled(Link)`
 
   &:hover {
     background-image: none;
+    text-decoration: none !important;
   }
 `;
 
@@ -42,7 +43,6 @@ const ListItem = styled.li`
 `;
 
 const SiteTitle = styled.h3`
-  display: inline;
   font-size: 1.4rem;
   font-weight: 700;
   margin: 0;
@@ -57,6 +57,7 @@ const SiteTitle = styled.h3`
 const SiteLink = styled(SiteTitle)`
   font-size: 1rem;
   opacity: 0.7;
+  margin-top: 0.3rem;
 
   /* Always keep 5px + 2px of space for the block so that the bottom border does not
   shift when navigating */

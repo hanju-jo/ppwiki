@@ -31,6 +31,7 @@ const PostContent = styled.div`
 `;
 
 const PostTitle = styled.h3`
+  display: block;
   margin-top: 1rem;
 `;
 
