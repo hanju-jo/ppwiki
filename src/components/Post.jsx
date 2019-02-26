@@ -11,10 +11,14 @@ const Title = styled.h1`
 const Date = styled.p`
   text-align: right;
   opacity: 0.7;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
 `;
 
 const TableOfContents = styled.div`
+  margin-bottom: 1rem;
   border-style: solid;
+  border-color: rgb(170, 170, 170);
   border-width: 1px;
 `;
 

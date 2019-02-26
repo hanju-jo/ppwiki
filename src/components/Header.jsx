@@ -42,9 +42,9 @@ const ListItem = styled.li`
 `;
 
 const SiteTitle = styled.h3`
-  display: inline-block;
+  display: inline;
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
   color: ${(props) => (props.active ? '#26418f' : '')};
   cursor: ${(props) => (props.active ? 'default' : '')};
