@@ -11,21 +11,22 @@ const Title = styled.h1`
 const Date = styled.p`
   text-align: right;
   opacity: 0.7;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
 `;
 
 const TableOfContents = styled.div`
+  margin-bottom: 1rem;
   border-style: solid;
+  border-color: rgb(170, 170, 170);
   border-width: 1px;
 `;
 
 export default function Post({ title, date, updated, showToc, html, tableOfContents }) {
   return (
     <div>
-      <Title>{title}</Title>
-      <Date>
-        created: {date}<br/>
-        updated: {updated}
-      </Date>
+      {title ? <Title>{title}</Title> : null}
+      {date ? <Date>created: {date}<br/>updated: {updated}</Date> : null}
       {showToc ? <TableOfContents dangerouslySetInnerHTML={{ __html: tableOfContents }} /> : null}
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>

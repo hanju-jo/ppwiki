@@ -31,6 +31,7 @@ const PostContent = styled.div`
 `;
 
 const PostTitle = styled.h3`
+  display: block;
   margin-top: 1rem;
 `;
 
@@ -42,11 +43,11 @@ const PostDate = styled.small`
 export default function IndexPage({ posts }) {
   return (
     <div>
-    {posts.map(({ title, path, date }) => (
+    {posts.map(({ title, path, updated }) => (
         <PostLink key={path} to={path}>
             <PostTitle>{title}</PostTitle>
             <PostContent>
-                <PostDate>{date}</PostDate>
+                <PostDate>{updated}</PostDate>
             </PostContent>
         </PostLink>
     ))}

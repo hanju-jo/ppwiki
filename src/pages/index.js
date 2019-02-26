@@ -22,12 +22,12 @@ export default function SiteIndex({
         posts={posts.map(
           ({
             node: {  
-              frontmatter: { title, path, date },
+              frontmatter: { title, path, updated },
             },
           }) => ({
             title,
             path,
-            date,
+            updated,
           }),
         )}
       />
