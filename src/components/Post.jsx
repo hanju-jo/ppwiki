@@ -25,11 +25,8 @@ const TableOfContents = styled.div`
 export default function Post({ title, date, updated, showToc, html, tableOfContents }) {
   return (
     <div>
-      <Title>{title}</Title>
-      <Date>
-        created: {date}<br/>
-        updated: {updated}
-      </Date>
+      {title ? <Title>{title}</Title> : null}
+      {date ? <Date>created: {date}<br/>updated: {updated}</Date> : null}
       {showToc ? <TableOfContents dangerouslySetInnerHTML={{ __html: tableOfContents }} /> : null}
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>

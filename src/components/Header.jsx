@@ -54,15 +54,15 @@ const SiteTitle = styled.h3`
   }
 `;
 
-// const SiteLink = styled(SiteTitle)`
-//   font-size: 1rem;
-//   opacity: 0.7;
+const SiteLink = styled(SiteTitle)`
+  font-size: 1rem;
+  opacity: 0.7;
 
-//   /* Always keep 5px + 2px of space for the block so that the bottom border does not
-//   shift when navigating */
-//   padding-bottom: ${(props) => (props.active ? '5px' : '7px')};
-//   border-bottom: ${(props) => (props.active ? '2px solid #26418f' : '')};
-// `;
+  /* Always keep 5px + 2px of space for the block so that the bottom border does not
+  shift when navigating */
+  padding-bottom: ${(props) => (props.active ? '5px' : '7px')};
+  border-bottom: ${(props) => (props.active ? '2px solid #26418f' : '')};
+`;
 
 export default function Header({ 
   path,  
@@ -83,11 +83,11 @@ export default function Header({
               </SiteTitle>
             </NavLink>
           </ListItem>
-          {/* <ListItem>
-            <NavLink to="/about">
-              <SiteLink active={path === '/about'}>About</SiteLink>
+          <ListItem>
+            <NavLink to="/wiki/index">
+              <SiteLink active={path === '/wiki/index'}>index</SiteLink>
             </NavLink>
-          </ListItem> */}
+          </ListItem>
         </List>
       </nav>
     </HeaderStyled>
