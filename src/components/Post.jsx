@@ -25,12 +25,12 @@ const TableOfContents = styled.div`
   width: auto;
 
   p, li {
+    margin-top: 0;
     margin-bottom: 0;
   }
 `;
 
 export default function Post({ title, date, updated, showToc, html, tableOfContents }) {
-  console.log(tableOfContents);
   return (
     <div>
       {title ? <Title>{title}</Title> : null}

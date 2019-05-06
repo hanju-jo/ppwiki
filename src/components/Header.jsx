@@ -7,6 +7,7 @@ import { site as sitePropType } from '../proptypes';
 
 const HeaderStyled = styled.header`
   margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
 `;
 
 const NavLink = styled(Link)`
@@ -36,6 +37,7 @@ const List = styled.ul`
 const ListItem = styled.li`
   flex-grow: ${({ shouldGrow }) => (shouldGrow ? 1 : null)};
   padding-left: 1rem;
+  margin-bottom: 0;
 
   &:first-child {
     padding-left: 0;
@@ -48,6 +50,7 @@ const SiteTitle = styled.h3`
   margin: 0;
   color: ${(props) => (props.active ? '#26418f' : '')};
   cursor: ${(props) => (props.active ? 'default' : '')};
+  border-bottom: none;
 
   &:hover {
     color: #26418f;
@@ -57,11 +60,7 @@ const SiteTitle = styled.h3`
 const SiteLink = styled(SiteTitle)`
   font-size: 1rem;
   opacity: 0.7;
-  margin-top: 0.3rem;
-
-  /* Always keep 5px + 2px of space for the block so that the bottom border does not
-  shift when navigating */
-  padding-bottom: ${(props) => (props.active ? '5px' : '7px')};
+  margin-top: 0.4rem;
   border-bottom: ${(props) => (props.active ? '2px solid #26418f' : '')};
 `;
 
