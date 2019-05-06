@@ -28,10 +28,6 @@ export default function Footer() {
   return (
     <FooterStyled>
         <Copyright>
-            <span role="img" aria-label="Copyright">
-            &copy;
-            </span>{' '}
-            Hanju Jo
         </Copyright>
         <StyledLink
             href="/rss.xml"
