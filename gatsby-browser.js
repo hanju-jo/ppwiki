@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+import "./src/styles/normalize.css"
 import "./src/styles/layout.css"
 import "prismjs/themes/prism-solarizedlight.css"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
