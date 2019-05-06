@@ -16,13 +16,21 @@ const Date = styled.p`
 `;
 
 const TableOfContents = styled.div`
-  margin-bottom: 1rem;
-  border-style: solid;
-  border-color: rgb(170, 170, 170);
-  border-width: 1px;
+  background: #f9f9f9 none repeat scroll 0 0;
+  border: 1px solid #aaa;
+  display: table;
+  font-size: 95%;
+  margin-bottom: 1em;
+  padding: 10px;
+  width: auto;
+
+  p, li {
+    margin-bottom: 0;
+  }
 `;
 
 export default function Post({ title, date, updated, showToc, html, tableOfContents }) {
+  console.log(tableOfContents);
   return (
     <div>
       {title ? <Title>{title}</Title> : null}
