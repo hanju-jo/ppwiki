@@ -2,7 +2,7 @@
 path    : /wiki/index
 title   : 
 date    : 
-updated : 2019-05-06 18:55:15
+updated : 2019-05-15 23:46:33
 toc     : false
 public  : false
 parent  : 
@@ -11,3 +11,4 @@ parent  :
 - [typography-demo](typography-demo)
 - [semantic-versioning](semantic-versioning)
 - [json-web-token](json-web-token)
+- [til-source-zshrc](til-source-zshrc)
