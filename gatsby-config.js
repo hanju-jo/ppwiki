@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://hanju-jo.github.io',
-    title: 'AWeek Wiki',
+    title: 'AWeek Dev Wiki',
     author: '@hanju-jo',
     description: 'A personal public wiki',
     social: {
